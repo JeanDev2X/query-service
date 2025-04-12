@@ -16,17 +16,23 @@ public class TransactionResponse {
     private String type;
     private BigDecimal amount;
     private LocalDateTime date;
+    private BigDecimal commission;
+    private String productType;
     
     @JsonCreator
     public TransactionResponse(
             @JsonProperty("accountNumber") String accountNumber,
             @JsonProperty("type") String type,
             @JsonProperty("amount") BigDecimal amount,
-            @JsonProperty("date") LocalDateTime date) {
+            @JsonProperty("date") LocalDateTime date,
+            @JsonProperty("commission") BigDecimal commission,
+            @JsonProperty("productType") String productType) {
         this.accountNumber = accountNumber;
         this.type = type;
         this.amount = amount;
         this.date = date;
+        this.commission = commission;
+        this.productType = productType;
     }
     
 }
