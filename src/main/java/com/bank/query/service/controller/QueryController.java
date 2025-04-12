@@ -1,9 +1,14 @@
 package com.bank.query.service.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import com.bank.query.service.dto.AccountBalanceResponse;
+import com.bank.query.service.dto.BalanceSummaryResponse;
+import com.bank.query.service.dto.CommissionReportResponse;
 import com.bank.query.service.dto.CreditBalanceResponse;
 import com.bank.query.service.dto.TransactionResponse;
 import com.bank.query.service.service.QueryService;
@@ -37,5 +42,17 @@ public class QueryController {
     public Flux<TransactionResponse> getMovementsByCredit(@PathVariable String creditNumber) {
         return queryService.getMovementsByCredit(creditNumber);
     }
+    
+    // Endpoint para obtener el resumen con el saldo promedio diario
+    @GetMapping("/balance/summary/{documentNumber}")
+    public Mono<BalanceSummaryResponse> getBalanceSummary(@PathVariable String documentNumber) {
+        return queryService.getBalanceSummary(documentNumber);
+    }
 
+    @GetMapping("/report/commissions")
+    public Flux<CommissionReportResponse> getCommissionReport(
+            @RequestParam("from") @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate from,
+            @RequestParam("to") @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate to) {
+        return queryService.getCommissionReport(from, to);
+    }
 }
