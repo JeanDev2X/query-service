@@ -1,4 +1,4 @@
-package com.bank.query.service.dto;
+package bank.query.dto;
 
 import lombok.Builder;
 import lombok.Data;

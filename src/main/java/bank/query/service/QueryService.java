@@ -1,13 +1,12 @@
-package com.bank.query.service.service;
+package bank.query.service;
 
 import java.time.LocalDate;
 
-import com.bank.query.service.dto.AccountBalanceResponse;
-import com.bank.query.service.dto.BalanceSummaryResponse;
-import com.bank.query.service.dto.CommissionReportResponse;
-import com.bank.query.service.dto.CreditBalanceResponse;
-import com.bank.query.service.dto.TransactionResponse;
-
+import bank.query.dto.AccountBalanceResponse;
+import bank.query.dto.BalanceSummaryResponse;
+import bank.query.dto.CommissionReportResponse;
+import bank.query.dto.CreditBalanceResponse;
+import bank.query.dto.TransactionResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,4 +1,4 @@
-package com.bank.query.service.service.impl;
+package bank.query.service.impl;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,13 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.bank.query.service.dto.AccountBalanceResponse;
-import com.bank.query.service.dto.BalanceSummaryResponse;
-import com.bank.query.service.dto.CommissionReportResponse;
-import com.bank.query.service.dto.CreditBalanceResponse;
-import com.bank.query.service.dto.TransactionResponse;
-import com.bank.query.service.service.QueryService;
-
+import bank.query.dto.AccountBalanceResponse;
+import bank.query.dto.BalanceSummaryResponse;
+import bank.query.dto.CommissionReportResponse;
+import bank.query.dto.CreditBalanceResponse;
+import bank.query.dto.TransactionResponse;
+import bank.query.service.QueryService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,4 +1,4 @@
-package com.bank.query.service.config;
+package bank.query.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
