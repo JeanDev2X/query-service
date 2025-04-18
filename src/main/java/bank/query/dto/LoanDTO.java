@@ -10,22 +10,25 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CreditBalanceResponse {
+public class LoanDTO {
 	private String creditNumber;
+	private BigDecimal amount;
     private String documentNumber;
-    private String type;
     private BigDecimal balance;
+    private String type;
     
     @JsonCreator
-    public CreditBalanceResponse(
+    public LoanDTO(
             @JsonProperty("creditNumber") String creditNumber,
+            @JsonProperty("amount") BigDecimal amount,
             @JsonProperty("documentNumber") String documentNumber,
-            @JsonProperty("type") String type,
-            @JsonProperty("balance") BigDecimal balance) {
+            @JsonProperty("balance") BigDecimal balance,
+            @JsonProperty("type") String type) {
         this.creditNumber = creditNumber;
+        this.amount = amount;
         this.documentNumber = documentNumber;
-        this.type = type;
         this.balance = balance;
+        this.type = type;
     }
     
 }

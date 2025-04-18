@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Data
 @Builder
-public class TransactionResponse {
+public class TransactionDTO {
 //	private String id;
     private String accountNumber;
     private String type;
@@ -18,21 +18,30 @@ public class TransactionResponse {
     private LocalDateTime date;
     private BigDecimal commission;
     private String productType;
+    private String sourceAccountNumber;
+    private String destinationAccountNumber;
+    private String cardNumber;
     
     @JsonCreator
-    public TransactionResponse(
+    public TransactionDTO(
             @JsonProperty("accountNumber") String accountNumber,
             @JsonProperty("type") String type,
             @JsonProperty("amount") BigDecimal amount,
             @JsonProperty("date") LocalDateTime date,
             @JsonProperty("commission") BigDecimal commission,
-            @JsonProperty("productType") String productType) {
+            @JsonProperty("productType") String productType,
+            @JsonProperty("sourceAccountNumber") String sourceAccountNumber,
+            @JsonProperty("destinationAccountNumber") String destinationAccountNumber,
+            @JsonProperty("cardNumber") String cardNumber) {
         this.accountNumber = accountNumber;
         this.type = type;
         this.amount = amount;
         this.date = date;
         this.commission = commission;
         this.productType = productType;
+        this.sourceAccountNumber = sourceAccountNumber;
+        this.destinationAccountNumber = destinationAccountNumber;
+        this.cardNumber = cardNumber;
     }
     
 }
