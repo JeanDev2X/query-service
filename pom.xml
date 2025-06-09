@@ -9,10 +9,10 @@
 		<version>3.1.7</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bank.customer.service</groupId>
-	<artifactId>com.bank.customer.service</artifactId>
+	<groupId>bank.query</groupId>
+	<artifactId>bank.query</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer-service</name>
+	<name>query-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
